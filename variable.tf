@@ -5,12 +5,12 @@
 #####\_/_/   \_\_| \_\___/_/   \_\____/|_____|_____|
 
 variable "cluster-name" {
-  default = "terraform-eks-demo"
+  default = "kubernetes.aws.billeci.com"
   type    = "string"
 }
 
 variable "region" {
-  default     = "us-east-1"
+  default     = "us-west-2"
   description = "Region"
 }
 
