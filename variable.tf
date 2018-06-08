@@ -5,7 +5,7 @@
 #####\_/_/   \_\_| \_\___/_/   \_\____/|_____|_____|
 
 variable "cluster-name" {
-  default = "kubernetes.aws.billeci.com"
+  default = "kubernetes-aws-billeci-com"
   type    = "string"
 }
 
@@ -20,7 +20,7 @@ variable "key_name" {
 }
 
 variable "ami" {
-  default = "ami-dea4d5a1"
+  default = "ami-73a6e20b"
 }
 
 variable "vpc" {

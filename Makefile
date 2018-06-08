@@ -12,7 +12,7 @@ TERRAFORM_RUN = docker run --rm -it \
 				-v ${CURDIR}:/data \
 				-v $$HOME/.aws:/root/.aws \
 				-v $$HOME/.ssh:/root/.ssh \
-				-w=/data \
+				-w /data \
 				${aws_id} \
 				${aws_secret} \
 				$(2) \
@@ -26,24 +26,28 @@ TERRAFORM_RUN = docker run --rm -it \
 TERRAFORM_RUN_NO_TTY = docker run --rm -i \
 				-v ${CURDIR}:/data \
 				-v $$HOME/.aws:/root/.aws \
-				-w=/data \				
+				-v $$HOME/.ssh:/root/.ssh \
+				-w /data \
 				${aws_id} \
 				${aws_secret} \
 				$(2) \
 				hashicorp/terraform \
 				$(1)
 
+
+
+
 .PHONY: init
+init:
 # terraform init
 	@$(call TERRAFORM_RUN, init)
 
 .PHONY: plan
+plan:
 # terraform plan
 	@$(call TERRAFORM_RUN, plan)
 
-.PHONY: version 
-	@$(call TERRAFORM_RUN, version)
-
 .PHONY: apply
+apply:
 # terraform apply
 	@$(call TERRAFORM_RUN, apply)
