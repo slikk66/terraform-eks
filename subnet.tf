@@ -85,7 +85,7 @@ resource "aws_route_table" "subnet-1c-prv" {
   }
 
   tags {
-    Name        = "${var.env}-rt-1c-prv"
+    Name        = "${var.env}-rt-app-1c-prv"
     Environment = "${var.env}"
     ManagedBy = "Terraform"
   }
